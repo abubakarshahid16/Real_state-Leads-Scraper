@@ -142,7 +142,6 @@ A: Absolutely! You can adjust the settings in `settings.json` to scrape agents f
 
 
 
-      </p>
-    </td>
+    
   </tr>
 </table>
