@@ -1,4 +1,4 @@
-# Realtor Leads Scraper
+# RealEstate  Leads Scraper
 
 This project is a web scraper designed to extract real estate agent contact information from multiple sources like Zillow, Realtor.com, Redfin, and Homes.com. The goal is to build a verified list of real estate agents in the U.S. Midwest, focusing on quality over quantity, ideal for lead generation purposes.
 
