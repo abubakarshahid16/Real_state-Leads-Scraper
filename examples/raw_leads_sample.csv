@@ -1,0 +1,5 @@
+agent_name,brokerage,email,mobile_phone,city,state,source_platform,source_url
+ John   Doe ,ABC Realty,JOHN@EXAMPLE.COM,(234) 567-8900, los angeles ,ca,Realtor.com,https://www.realtor.com/profile/johndoe
+Jane Smith,XYZ Real Estate,jane@example.com,+1 987 654 3210,San Diego,CA,Homes.com,https://www.homes.com/real-estate-agents/janesmith
+Maria Johnson,Midwest Property Group,,312.555.7812,Chicago,il,Realtor.com,https://www.realtor.com/profile/mariajohnson
+John Doe,ABC Realty,john@example.com,2345678900,Los Angeles,CA,Realtor.com,https://www.realtor.com/profile/johndoe

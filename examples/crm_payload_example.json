@@ -1,0 +1,19 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "phone": "+1-234-567-8900",
+  "city": "Los Angeles",
+  "state": "CA",
+  "source": "Realtor.com",
+  "tags": [
+    "ca-agent",
+    "off-market-outreach",
+    "ready-for-crm"
+  ],
+  "customFields": {
+    "brokerage": "ABC Realty",
+    "source_url": "https://www.realtor.com/profile/johndoe",
+    "crm_status": "ready_for_crm"
+  }
+}

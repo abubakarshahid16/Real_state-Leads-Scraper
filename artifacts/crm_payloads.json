@@ -1,0 +1,40 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "phone": "+1-234-567-8900",
+    "city": "Los Angeles",
+    "state": "CA",
+    "source": "Realtor.com",
+    "tags": [
+      "ca-agent",
+      "off-market-outreach",
+      "ready-for-crm"
+    ],
+    "customFields": {
+      "brokerage": "ABC Realty",
+      "source_url": "https://www.realtor.com/profile/johndoe",
+      "crm_status": "ready_for_crm"
+    }
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane@example.com",
+    "phone": "+1-987-654-3210",
+    "city": "San Diego",
+    "state": "CA",
+    "source": "Homes.com",
+    "tags": [
+      "ca-agent",
+      "off-market-outreach",
+      "ready-for-crm"
+    ],
+    "customFields": {
+      "brokerage": "XYZ Real Estate",
+      "source_url": "https://www.homes.com/real-estate-agents/janesmith",
+      "crm_status": "ready_for_crm"
+    }
+  }
+]

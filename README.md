@@ -4,140 +4,140 @@
 
 # Real Estate Leads Scraper
 
-A public-facing project brief for a **real-estate lead intelligence scraper** designed to collect agent and brokerage contact data from major listing platforms and turn it into cleaner, outreach-ready records.
+A real-estate lead pipeline demo for collecting agent contact data, cleaning it, removing duplicates, and exporting CRM-ready records for outreach teams.
 
-This repository is positioned as a **lead-generation data workflow** rather than a generic scraper idea. The goal is to make it easy for a recruiter, client, or collaborator to quickly understand:
+This repository demonstrates the architecture and sample output of a real-estate agent lead pipeline that can be adapted for Homes.com/Realtor.com API data, cleaned, deduplicated, validated, and exported into ReSimpli or GoHighLevel.
 
-- what problem the project solves
-- what data it collects
-- how the workflow is supposed to operate
-- what makes the output useful in a real business setting
+## What problem this solves
 
-## Problem this project solves
+Acquisition and outreach teams often need fresh lists of active real-estate agents in specific markets. The manual process is usually slow:
 
-Real-estate outreach teams often build prospect lists manually. That usually means:
+- search agent profiles one site at a time
+- copy names, brokerages, phones, and emails into spreadsheets
+- merge duplicate records by hand
+- clean formatting before importing into a CRM
+- lose time reviewing bad or incomplete lead records
 
-- searching agent profiles one site at a time
-- copying names, brokerages, emails, and phone numbers into spreadsheets
-- checking whether records are duplicated or incomplete
-- losing time cleaning data before outreach even starts
+This project turns that into a structured workflow: source lead data, normalize it, flag weak records, and produce CRM-ready output.
 
-That process is slow, repetitive, and hard to scale.
+## Why this repo is useful
 
-This project solves that by framing agent discovery as a structured pipeline: collect, validate, normalize, and export lead records in a reusable format.
+This is not positioned as a vague concept repo anymore. It gives a practical proof-of-work for the exact workflow Scott described:
 
-## What this project is meant to do
+- real-estate agent records
+- name, email, phone, city, state, source, and URL fields
+- Realtor.com and Homes.com compatible source structure
+- duplicate detection and normalization
+- CRM-ready payload mapping
+- ReSimpli and GoHighLevel handoff examples
 
-The intended scraper workflow collects real-estate agent contact information from listing ecosystems such as:
+## What is included
 
-- Zillow
-- Realtor.com
-- Redfin
-- Homes.com
-
-Then it organizes the results into a cleaner lead dataset with fields such as:
-
-- agent name
-- brokerage name
-- email
-- mobile phone
-- city and state
-- source platform
-- source URL
-
-## Why this matters
-
-- Outreach teams need faster lead-list creation.
-- Data quality matters more than raw lead volume.
-- Source attribution matters for later verification and follow-up.
-- Clean exports make the data easier to move into CRMs, spreadsheets, or campaign tools.
-
-## Workflow overview
-
-### Lead collection flow
+### Workflow visuals
 
 ![Lead collection flow](docs/lead-collection-flow.svg)
 
-### Data architecture
-
 ![Data architecture](docs/lead-architecture.svg)
 
-## Intended output
+### Concrete examples
 
-Example record structure:
+The [`examples/`](examples) folder includes:
 
-```json
-[
-  {
-    "agent_name": "John Doe",
-    "brokerage": "ABC Realty",
-    "email": "johndoe@example.com",
-    "mobile_phone": "+1-234-567-890",
-    "city_state": "Detroit, MI",
-    "source_platform": "Zillow",
-    "source_link": "https://www.zillow.com/profile/JohnDoe"
-  },
-  {
-    "agent_name": "Jane Smith",
-    "brokerage": "XYZ Real Estate",
-    "email": "janesmith@example.com",
-    "mobile_phone": "+1-987-654-321",
-    "city_state": "Chicago, IL",
-    "source_platform": "Realtor.com",
-    "source_link": "https://www.realtor.com/profile/JaneSmith"
-  }
-]
+- [`examples/raw_leads_sample.csv`](examples/raw_leads_sample.csv): intentionally messy source-style records
+- [`examples/sample_output.csv`](examples/sample_output.csv): cleaned and deduplicated output
+- [`examples/crm_payload_example.json`](examples/crm_payload_example.json): example CRM-ready payload
+- [`examples/webhook_mapping.md`](examples/webhook_mapping.md): field mapping for ReSimpli and GoHighLevel
+
+### Utility scripts
+
+The [`src/`](src) folder includes:
+
+- [`src/clean_leads.py`](src/clean_leads.py): normalizes, validates, and deduplicates sample lead records
+- [`src/export_crm_payload.py`](src/export_crm_payload.py): converts cleaned leads into CRM payloads for downstream systems
+
+## End-to-end demo flow
+
+1. Start with raw records from a listing platform export or API response.
+2. Normalize names, emails, phone numbers, cities, and states.
+3. Remove duplicate records.
+4. Mark each lead as `ready_for_crm` or `needs_review`.
+5. Export CRM payloads only for records that are ready to post.
+
+That is the exact shape of a production lead pipeline, even though this public repo intentionally uses safe sample data.
+
+## Sample raw input
+
+The raw sample file shows the sort of inconsistencies outreach teams usually receive before cleaning:
+
+```csv
+agent_name,brokerage,email,mobile_phone,city,state,source_platform,source_url
+ John   Doe ,ABC Realty,JOHN@EXAMPLE.COM,(234) 567-8900, los angeles ,ca,Realtor.com,https://www.realtor.com/profile/johndoe
+Jane Smith,XYZ Real Estate,jane@example.com,+1 987 654 3210,San Diego,CA,Homes.com,https://www.homes.com/real-estate-agents/janesmith
+Maria Johnson,Midwest Property Group,,312.555.7812,Chicago,il,Realtor.com,https://www.realtor.com/profile/mariajohnson
+John Doe,ABC Realty,john@example.com,2345678900,Los Angeles,CA,Realtor.com,https://www.realtor.com/profile/johndoe
 ```
 
-## Field dictionary
+## Sample cleaned output
 
-| Field | Meaning |
-| --- | --- |
-| `agent_name` | Name of the real-estate agent |
-| `brokerage` | Brokerage or company name |
-| `email` | Agent email when available |
-| `mobile_phone` | Direct phone number when available |
-| `city_state` | Primary market or location |
-| `source_platform` | Site the lead came from |
-| `source_link` | Original profile or listing URL |
+```csv
+agent_name,brokerage,email,mobile_phone,city,state,source_platform,source_url,crm_status
+John Doe,ABC Realty,john@example.com,+1-234-567-8900,Los Angeles,CA,Realtor.com,https://www.realtor.com/profile/johndoe,ready_for_crm
+Jane Smith,XYZ Real Estate,jane@example.com,+1-987-654-3210,San Diego,CA,Homes.com,https://www.homes.com/real-estate-agents/janesmith,ready_for_crm
+Maria Johnson,Midwest Property Group,,+1-312-555-7812,Chicago,IL,Realtor.com,https://www.realtor.com/profile/mariajohnson,needs_review
+```
 
-## Real-world use cases
+## CRM-ready payload example
 
-- real-estate lead generation
-- brokerage prospecting
-- outreach-list building for partnerships
-- market coverage mapping by region
-- enrichment workflows before CRM import
+```json
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john@example.com",
+  "phone": "+1-234-567-8900",
+  "city": "Los Angeles",
+  "state": "CA",
+  "source": "Realtor.com",
+  "tags": ["ca-agent", "off-market-outreach", "ready-for-crm"],
+  "customFields": {
+    "brokerage": "ABC Realty",
+    "source_url": "https://www.realtor.com/profile/johndoe",
+    "crm_status": "ready_for_crm"
+  }
+}
+```
+
+## Run the demo
+
+```bash
+python src/clean_leads.py
+python src/export_crm_payload.py
+```
+
+The scripts read from `examples/` and write generated artifacts to `artifacts/`:
+
+- `artifacts/cleaned_leads.csv`
+- `artifacts/crm_payloads.json`
 
 ## Industrial positioning
 
-To be used seriously, a project like this needs more than scraping logic alone. A production-style version should include:
+This repo is strongest as a portfolio-grade pipeline demo, but it is framed the right way for real implementation work:
 
-- source-specific extractors
-- retry handling and rate-limit controls
-- schema validation
-- duplicate detection
-- email and phone normalization
-- export to CSV or Google Sheets
-- compliance review for data collection and use
-- logging and failure monitoring
+- source connectors can be swapped for Realtor.com or Homes.com APIs
+- validation logic can be expanded for email and phone verification
+- exports can be posted into ReSimpli or GoHighLevel webhooks
+- logging, retry logic, and monitoring can be layered on top
 
-That framing turns the project from "one script" into a reusable lead-intelligence pipeline.
+That makes this repo useful in two ways:
 
-## Current repository status
+- as a proof-of-understanding for a lead generation workflow
+- as a starting point for a production lead-intelligence pipeline
 
-This repository currently serves as a **clean public project brief and portfolio-facing specification** for the scraper workflow.
+## How to present it to a client
 
-It does **not** currently include a full production implementation in this public repo. That is intentional: the purpose here is to present the project clearly and professionally without fake claims or filler content.
+The strongest honest positioning is:
 
-## What would make this repo even stronger later
-
-- add the actual scraper modules
-- include a sample CSV with sanitized example records
-- add source-specific extraction notes
-- document validation and deduplication logic
-- add a small dashboard or CLI usage example
+> This repository demonstrates the workflow, data model, cleaning logic, deduplication, and CRM-ready export shape for a real-estate agent lead pipeline. The production version would connect to source APIs first, then push validated records into ReSimpli or GoHighLevel.
 
 ## Summary
 
-This project is best understood as a **real-estate lead intelligence workflow** that reduces manual research time and produces cleaner outreach-ready records.
+This project shows a real and understandable business workflow: take messy real-estate lead records, clean them, deduplicate them, and prepare them for CRM import or outreach automation.
