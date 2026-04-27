@@ -4,9 +4,16 @@
 
 # Real Estate Leads Scraper
 
-A real-estate lead pipeline demo for collecting agent contact data, cleaning it, removing duplicates, and exporting CRM-ready records for outreach teams.
+A real-estate lead pipeline demo that turns messy agent records into CRM-ready leads for outreach teams.
 
-This repository demonstrates the architecture and sample output of a real-estate agent lead pipeline that can be adapted for Homes.com/Realtor.com API data, cleaned, deduplicated, validated, and exported into ReSimpli or GoHighLevel.
+This repository demonstrates the architecture, sample data flow, cleaning logic, deduplication rules, and CRM export shape of a real-estate agent lead pipeline that can be adapted for Homes.com/Realtor.com source or API data and handed off to ReSimpli or GoHighLevel.
+
+## Executive summary
+
+- Problem: outreach teams waste time manually collecting and cleaning agent data.
+- Solution: standardize raw lead records, remove duplicates, flag weak records, and export only CRM-ready payloads.
+- Proof included: raw sample input, cleaned CSV output, CRM payload JSON, field mapping, and runnable Python scripts.
+- CRM target: ReSimpli or GoHighLevel style handoff.
 
 ## What problem this solves
 
@@ -20,28 +27,46 @@ Acquisition and outreach teams often need fresh lists of active real-estate agen
 
 This project turns that into a structured workflow: source lead data, normalize it, flag weak records, and produce CRM-ready output.
 
-## Why this repo is useful
+## Why this repo is strong
 
-This is not positioned as a vague concept repo anymore. It gives a practical proof-of-work for the exact workflow Scott described:
+This repo now demonstrates the exact workflow Scott described instead of just talking about it:
 
 - real-estate agent records
 - name, email, phone, city, state, source, and URL fields
 - Realtor.com and Homes.com compatible source structure
 - duplicate detection and normalization
+- review gating for incomplete leads
 - CRM-ready payload mapping
 - ReSimpli and GoHighLevel handoff examples
 
-## What is included
-
-### Workflow visuals
+## Architecture
 
 ![Lead collection flow](docs/lead-collection-flow.svg)
 
 ![Data architecture](docs/lead-architecture.svg)
 
-### Concrete examples
+## Proof of workflow
 
-The [`examples/`](examples) folder includes:
+### Before and after preview
+
+![Lead cleanup preview](docs/lead-cleaning-preview.svg)
+
+### CRM export preview
+
+![CRM handoff preview](docs/crm-handoff-preview.svg)
+
+These visuals mirror the real files included in this repo:
+
+- [`examples/raw_leads_sample.csv`](examples/raw_leads_sample.csv)
+- [`examples/sample_output.csv`](examples/sample_output.csv)
+- [`examples/crm_payload_example.json`](examples/crm_payload_example.json)
+- [`examples/webhook_mapping.md`](examples/webhook_mapping.md)
+- [`artifacts/cleaned_leads.csv`](artifacts/cleaned_leads.csv)
+- [`artifacts/crm_payloads.json`](artifacts/crm_payloads.json)
+
+## What is included
+
+### Example data
 
 - [`examples/raw_leads_sample.csv`](examples/raw_leads_sample.csv): intentionally messy source-style records
 - [`examples/sample_output.csv`](examples/sample_output.csv): cleaned and deduplicated output
@@ -49,8 +74,6 @@ The [`examples/`](examples) folder includes:
 - [`examples/webhook_mapping.md`](examples/webhook_mapping.md): field mapping for ReSimpli and GoHighLevel
 
 ### Utility scripts
-
-The [`src/`](src) folder includes:
 
 - [`src/clean_leads.py`](src/clean_leads.py): normalizes, validates, and deduplicates sample lead records
 - [`src/export_crm_payload.py`](src/export_crm_payload.py): converts cleaned leads into CRM payloads for downstream systems
@@ -63,11 +86,21 @@ The [`src/`](src) folder includes:
 4. Mark each lead as `ready_for_crm` or `needs_review`.
 5. Export CRM payloads only for records that are ready to post.
 
-That is the exact shape of a production lead pipeline, even though this public repo intentionally uses safe sample data.
+That is the exact operational shape of a production lead pipeline, even though this public repo intentionally uses safe sample data.
+
+## Run the demo
+
+```bash
+python src/clean_leads.py
+python src/export_crm_payload.py
+```
+
+The scripts read from `examples/` and write generated artifacts to `artifacts/`:
+
+- `artifacts/cleaned_leads.csv`
+- `artifacts/crm_payloads.json`
 
 ## Sample raw input
-
-The raw sample file shows the sort of inconsistencies outreach teams usually receive before cleaning:
 
 ```csv
 agent_name,brokerage,email,mobile_phone,city,state,source_platform,source_url
@@ -105,18 +138,6 @@ Maria Johnson,Midwest Property Group,,+1-312-555-7812,Chicago,IL,Realtor.com,htt
   }
 }
 ```
-
-## Run the demo
-
-```bash
-python src/clean_leads.py
-python src/export_crm_payload.py
-```
-
-The scripts read from `examples/` and write generated artifacts to `artifacts/`:
-
-- `artifacts/cleaned_leads.csv`
-- `artifacts/crm_payloads.json`
 
 ## Industrial positioning
 

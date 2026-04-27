@@ -1,0 +1,35 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" rx="32" fill="#EEF4F1"/>
+  <rect x="48" y="48" width="1184" height="624" rx="24" fill="#FFFFFF" stroke="#D6E2DC" stroke-width="2"/>
+  <text x="78" y="102" fill="#1E2430" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="700">CRM Handoff Preview</text>
+  <text x="78" y="138" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="18">Only records marked ready_for_crm move into the final payload export.</text>
+  <rect x="78" y="182" width="420" height="430" rx="20" fill="#163B35"/>
+  <rect x="780" y="182" width="374" height="430" rx="20" fill="#FAF6EE" stroke="#E4D8BF" stroke-width="2"/>
+  <text x="104" y="228" fill="#91E7D0" font-family="Consolas, monospace" font-size="24" font-weight="700">crm_payloads.json</text>
+  <text x="104" y="274" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">{</text>
+  <text x="124" y="304" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"firstName": "John",</text>
+  <text x="124" y="334" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"lastName": "Doe",</text>
+  <text x="124" y="364" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"email": "john@example.com",</text>
+  <text x="124" y="394" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"phone": "+1-234-567-8900",</text>
+  <text x="124" y="424" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"source": "Realtor.com",</text>
+  <text x="124" y="454" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"tags": ["ca-agent", "ready-for-crm"],</text>
+  <text x="124" y="484" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">"customFields": { ... }</text>
+  <text x="104" y="514" fill="#E8FFF7" font-family="Consolas, monospace" font-size="16">}</text>
+  <path d="M554 344C616 344 650 344 706 344" stroke="#D66D4D" stroke-width="8" stroke-linecap="round"/>
+  <path d="M694 326L732 344L694 362" stroke="#D66D4D" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="640" cy="344" r="58" fill="#FFF3ED" stroke="#EDC5B3" stroke-width="2"/>
+  <text x="612" y="336" fill="#A64E2E" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Export</text>
+  <text x="596" y="360" fill="#A64E2E" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700">Ready Only</text>
+  <text x="806" y="236" fill="#8C6738" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">CRM Targets</text>
+  <rect x="806" y="270" width="322" height="110" rx="16" fill="#FFFFFF" stroke="#DCCCA9" stroke-width="2"/>
+  <text x="832" y="316" fill="#1E2430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">ReSimpli</text>
+  <text x="832" y="344" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="17">Contact, pipeline stage,</text>
+  <text x="832" y="368" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="17">brokerage custom fields</text>
+  <rect x="806" y="404" width="322" height="110" rx="16" fill="#FFFFFF" stroke="#DCCCA9" stroke-width="2"/>
+  <text x="832" y="450" fill="#1E2430" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">GoHighLevel</text>
+  <text x="832" y="478" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="17">firstName, lastName, phone,</text>
+  <text x="832" y="502" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="17">source tags, customFields</text>
+  <rect x="78" y="628" width="1076" height="16" rx="8" fill="#D7E4DE"/>
+  <rect x="78" y="628" width="718" height="16" rx="8" fill="#5FBEA3"/>
+  <text x="80" y="602" fill="#5D6876" font-family="Segoe UI, Arial, sans-serif" font-size="16">2 leads exported automatically, 1 lead held back for review.</text>
+</svg>
