@@ -12,6 +12,15 @@ A real-estate lead pipeline demo that turns messy agent records into CRM-ready l
 
 This repository demonstrates the architecture, sample data flow, cleaning logic, deduplication rules, and CRM export shape of a real-estate agent lead pipeline that can be adapted for Homes.com/Realtor.com source or API data and handed off to ReSimpli or GoHighLevel.
 
+## Quick proof links
+
+- [Raw sample leads](examples/raw_leads_sample.csv)
+- [Cleaned lead output](artifacts/cleaned_leads.csv)
+- [CRM payload export](artifacts/crm_payloads.json)
+- [CRM mapping notes](examples/webhook_mapping.md)
+- [Cleaning script](src/clean_leads.py)
+- [Export script](src/export_crm_payload.py)
+
 ## Executive summary
 
 - Problem: outreach teams waste time manually collecting and cleaning agent data.
