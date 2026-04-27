@@ -6,6 +6,10 @@
 
 A real-estate lead pipeline demo that turns messy agent records into CRM-ready leads for outreach teams.
 
+`Status:` Public demo proof included
+`Output:` Cleaned CSV + CRM-ready JSON payloads
+`CRM Targets:` ReSimpli and GoHighLevel
+
 This repository demonstrates the architecture, sample data flow, cleaning logic, deduplication rules, and CRM export shape of a real-estate agent lead pipeline that can be adapted for Homes.com/Realtor.com source or API data and handed off to ReSimpli or GoHighLevel.
 
 ## Executive summary
