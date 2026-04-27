@@ -1,0 +1,29 @@
+<svg width="1600" height="720" viewBox="0 0 1600 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="720" rx="36" fill="#07111F"/>
+  <rect x="48" y="48" width="1504" height="624" rx="32" fill="url(#paint0_linear)" stroke="#173A60"/>
+  <text x="112" y="162" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Lead Intelligence Workflow</text>
+  <text x="112" y="250" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="68" font-weight="700">Real Estate Leads Scraper</text>
+  <text x="112" y="320" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="30">Collect agent records, clean the data, and prepare outreach-ready lead lists.</text>
+  <rect x="112" y="384" width="228" height="58" rx="29" fill="#1EE7D4"/>
+  <text x="164" y="421" fill="#04101F" font-family="Arial, sans-serif" font-size="24" font-weight="700">Multi-source</text>
+  <rect x="364" y="384" width="236" height="58" rx="29" fill="#173252"/>
+  <text x="423" y="421" fill="#EAF6FF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Validated</text>
+  <rect x="624" y="384" width="270" height="58" rx="29" fill="#173252"/>
+  <text x="688" y="421" fill="#EAF6FF" font-family="Arial, sans-serif" font-size="24" font-weight="700">Export Ready</text>
+  <rect x="980" y="148" width="462" height="386" rx="28" fill="#0E223E" stroke="#1A4268"/>
+  <text x="1024" y="210" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="22" font-weight="700">Pipeline</text>
+  <text x="1024" y="274" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Discover</text>
+  <text x="1024" y="332" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Extract</text>
+  <text x="1024" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Validate</text>
+  <text x="1024" y="448" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="28" font-weight="700">Export</text>
+  <path d="M1160 266H1334" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1160 324H1298" stroke="#284E77" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1160 382H1364" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1160 440H1276" stroke="#284E77" stroke-width="10" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="800" y1="48" x2="800" y2="672" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A2347"/>
+      <stop offset="1" stop-color="#081426"/>
+    </linearGradient>
+  </defs>
+</svg>

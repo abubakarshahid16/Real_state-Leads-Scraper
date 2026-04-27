@@ -1,147 +1,143 @@
-# RealEstate  Leads Scraper
+<p align="center">
+  <img src="docs/lead-pipeline-hero.svg" alt="Real estate lead intelligence workflow" width="100%" />
+</p>
 
-This project is a web scraper designed to extract real estate agent contact information from multiple sources like Zillow, Realtor.com, Redfin, and Homes.com. The goal is to build a verified list of real estate agents in the U.S. Midwest, focusing on quality over quantity, ideal for lead generation purposes.
+# Real Estate Leads Scraper
 
+A public-facing project brief for a **real-estate lead intelligence scraper** designed to collect agent and brokerage contact data from major listing platforms and turn it into cleaner, outreach-ready records.
 
+This repository is positioned as a **lead-generation data workflow** rather than a generic scraper idea. The goal is to make it easy for a recruiter, client, or collaborator to quickly understand:
 
+- what problem the project solves
+- what data it collects
+- how the workflow is supposed to operate
+- what makes the output useful in a real business setting
 
+## Problem this project solves
 
+Real-estate outreach teams often build prospect lists manually. That usually means:
 
+- searching agent profiles one site at a time
+- copying names, brokerages, emails, and phone numbers into spreadsheets
+- checking whether records are duplicated or incomplete
+- losing time cleaning data before outreach even starts
 
+That process is slow, repetitive, and hard to scale.
 
+This project solves that by framing agent discovery as a structured pipeline: collect, validate, normalize, and export lead records in a reusable format.
 
+## What this project is meant to do
 
-## Introduction
+The intended scraper workflow collects real-estate agent contact information from listing ecosystems such as:
 
-This scraper collects critical contact information for real estate agents, focusing on accurate lead generation. It is intended for businesses or individuals seeking to build a reliable real estate lead list with verified data.
+- Zillow
+- Realtor.com
+- Redfin
+- Homes.com
 
-### Why This Scraper Matters for Real Estate Lead Generation
+Then it organizes the results into a cleaner lead dataset with fields such as:
 
-- **Reliable Contact Info:** Scrapes and verifies real estate agent details, ensuring that the data is not generic or duplicated.
-- **Targeted Data:** Designed to scrape agents from trusted sources like Realtor.com, Zillow, Redfin, and Homes.com.
-- **Email Validation:** Ensures the emails collected are valid, preventing wasted outreach efforts.
-- **Time-Saving:** Automates the data collection process, reducing manual effort and ensuring faster results.
-- **Scalable:** Suitable for smaller starter lists and larger-scale lead generation campaigns in the future.
+- agent name
+- brokerage name
+- email
+- mobile phone
+- city and state
+- source platform
+- source URL
 
-## Features
+## Why this matters
 
-| Feature                       | Description                                                   |
-|-------------------------------|---------------------------------------------------------------|
-| Real Estate Agent Scraping     | Collects agent's name, brokerage, email, phone, and location. |
-| Email Validation               | Ensures email addresses are valid and not generic.            |
-| Source Link                    | Captures the original listing source (Zillow, Realtor.com).   |
-| CSV/Google Sheet Export        | Delivers scraped data in CSV or Google Sheet format.          |
+- Outreach teams need faster lead-list creation.
+- Data quality matters more than raw lead volume.
+- Source attribution matters for later verification and follow-up.
+- Clean exports make the data easier to move into CRMs, spreadsheets, or campaign tools.
 
----
+## Workflow overview
 
-## What Data This Scraper Extracts
+### Lead collection flow
 
-| Field Name       | Field Description                                          |
-|------------------|------------------------------------------------------------|
-| Realtor Name     | The name of the real estate agent.                         |
-| Brokerage Name   | The company the agent works for.                           |
-| Email            | The real estate agent's email address (verified).          |
-| Mobile Phone     | Agent’s mobile phone number (if available).                |
-| City + State     | The city and state where the agent is based.               |
-| Source Link      | The URL where the agent's information was found.           |
+![Lead collection flow](docs/lead-collection-flow.svg)
 
----
+### Data architecture
 
-## Example Output
+![Data architecture](docs/lead-architecture.svg)
 
-    [
-          {
-            "realtor_name": "John Doe",
-            "brokerage": "ABC Realty",
-            "email": "johndoe@example.com",
-            "mobile": "+1234567890",
-            "city_state": "Detroit, MI",
-            "source_link": "https://www.zillow.com/profile/JohnDoe"
-          },
-          {
-            "realtor_name": "Jane Smith",
-            "brokerage": "XYZ Real Estate",
-            "email": "janesmith@example.com",
-            "mobile": "+0987654321",
-            "city_state": "Chicago, IL",
-            "source_link": "https://www.realtor.com/profile/JaneSmith"
-          }
-    ]
+## Intended output
 
----
+Example record structure:
 
-## Directory Structure Tree
+```json
+[
+  {
+    "agent_name": "John Doe",
+    "brokerage": "ABC Realty",
+    "email": "johndoe@example.com",
+    "mobile_phone": "+1-234-567-890",
+    "city_state": "Detroit, MI",
+    "source_platform": "Zillow",
+    "source_link": "https://www.zillow.com/profile/JohnDoe"
+  },
+  {
+    "agent_name": "Jane Smith",
+    "brokerage": "XYZ Real Estate",
+    "email": "janesmith@example.com",
+    "mobile_phone": "+1-987-654-321",
+    "city_state": "Chicago, IL",
+    "source_platform": "Realtor.com",
+    "source_link": "https://www.realtor.com/profile/JaneSmith"
+  }
+]
+```
 
-    realtor-leads-scraper/
+## Field dictionary
 
-    ├── src/
+| Field | Meaning |
+| --- | --- |
+| `agent_name` | Name of the real-estate agent |
+| `brokerage` | Brokerage or company name |
+| `email` | Agent email when available |
+| `mobile_phone` | Direct phone number when available |
+| `city_state` | Primary market or location |
+| `source_platform` | Site the lead came from |
+| `source_link` | Original profile or listing URL |
 
-    │   ├── scraper.py
+## Real-world use cases
 
-    │   ├── extractors/
+- real-estate lead generation
+- brokerage prospecting
+- outreach-list building for partnerships
+- market coverage mapping by region
+- enrichment workflows before CRM import
 
-    │   │   ├── realtor_scraper.py
+## Industrial positioning
 
-    │   │   └── utils.py
+To be used seriously, a project like this needs more than scraping logic alone. A production-style version should include:
 
-    │   ├── outputs/
+- source-specific extractors
+- retry handling and rate-limit controls
+- schema validation
+- duplicate detection
+- email and phone normalization
+- export to CSV or Google Sheets
+- compliance review for data collection and use
+- logging and failure monitoring
 
-    │   │   └── data_exporter.py
+That framing turns the project from "one script" into a reusable lead-intelligence pipeline.
 
-    │   └── config/
+## Current repository status
 
-    │       └── settings.json
+This repository currently serves as a **clean public project brief and portfolio-facing specification** for the scraper workflow.
 
-    ├── data/
+It does **not** currently include a full production implementation in this public repo. That is intentional: the purpose here is to present the project clearly and professionally without fake claims or filler content.
 
-    │   ├── sample_input.txt
+## What would make this repo even stronger later
 
-    │   └── leads_output.csv
+- add the actual scraper modules
+- include a sample CSV with sanitized example records
+- add source-specific extraction notes
+- document validation and deduplication logic
+- add a small dashboard or CLI usage example
 
-    ├── requirements.txt
+## Summary
 
-    └── README.md
-
----
-
-## Use Cases
-
-**Real estate agencies** use this scraper to **build accurate agent contact lists**, so they can **target specific agents with marketing or partnership offers.**
-
-**Lead generation specialists** use it to **collect verified agent details**, allowing them to **create high-quality, actionable lead lists.**
-
-**Real estate businesses** use this tool to **extract contact details for agents**, enabling them to **grow their network and increase client acquisition.**
-
----
-
-## FAQs
-
-**Q: How do I configure this scraper?**
-
-A: After cloning the repository, update the `settings.json` file with the appropriate configurations for scraping different sources like Realtor.com or Zillow. The required fields such as location and sources are customizable.
-
-**Q: Is the data automatically verified?**
-
-A: Yes, this scraper validates email addresses during the extraction process to ensure only genuine and non-generic addresses are captured.
-
-**Q: Can I scrape agents from other regions?**
-
-A: Absolutely! You can adjust the settings in `settings.json` to scrape agents from any region, not just the U.S. Midwest.
-
----
-
-## Performance Benchmarks and Results
-
-**Primary Metric:** Scrapes up to 500 agents per hour.
-
-**Reliability Metric:** 98% success rate for data extraction across the major real estate websites.
-
-**Efficiency Metric:** Efficient use of memory and CPU; can handle large data volumes without crashing.
-
-**Quality Metric:** 95% data accuracy, with all emails verified and no duplicates.
-
-
-
-    
-  </tr>
-</table>
+This project is best understood as a **real-estate lead intelligence workflow** that reduces manual research time and produces cleaner outreach-ready records.

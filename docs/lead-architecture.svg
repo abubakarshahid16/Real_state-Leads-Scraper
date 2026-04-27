@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="36" fill="#051020"/>
+  <rect x="56" y="56" width="1488" height="788" rx="30" fill="#091B35" stroke="#16395D"/>
+  <text x="112" y="142" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">Data Architecture</text>
+  <rect x="112" y="244" width="280" height="430" rx="28" fill="#102346"/>
+  <text x="146" y="300" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="18">Input Layer</text>
+  <text x="146" y="360" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Sources</text>
+  <text x="146" y="426" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Realtor.com, Zillow, Redfin, Homes.com, and other target listing ecosystems.</text>
+  <rect x="468" y="244" width="280" height="430" rx="28" fill="#102346"/>
+  <text x="502" y="300" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="18">Processing Layer</text>
+  <text x="502" y="360" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Normalization</text>
+  <text x="502" y="426" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Field parsing, deduplication, contact validation, and source attribution cleanup.</text>
+  <rect x="824" y="244" width="280" height="430" rx="28" fill="#102346"/>
+  <text x="858" y="300" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="18">Output Layer</text>
+  <text x="858" y="360" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Lead Dataset</text>
+  <text x="858" y="426" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Agent name, brokerage, email, phone, location, source platform, and source URL.</text>
+  <rect x="1180" y="244" width="252" height="430" rx="28" fill="#102346"/>
+  <text x="1214" y="300" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="18">Delivery Layer</text>
+  <text x="1214" y="360" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Activation</text>
+  <text x="1214" y="426" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">CSV export, sheet sync, CRM import, or outreach workflow handoff.</text>
+  <path d="M392 458H468" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M748 458H824" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1104 458H1180" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+</svg>

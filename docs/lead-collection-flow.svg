@@ -1,0 +1,24 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="36" fill="#061126"/>
+  <rect x="56" y="56" width="1488" height="788" rx="30" fill="#0A1730" stroke="#16395D"/>
+  <text x="112" y="140" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">Lead Collection Flow</text>
+  <rect x="112" y="248" width="248" height="420" rx="28" fill="#102346"/>
+  <text x="144" y="312" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="20">Step 01</text>
+  <text x="144" y="370" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Source Discovery</text>
+  <text x="144" y="434" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Choose target markets and identify the listing platforms or profile pages to scan.</text>
+  <rect x="442" y="248" width="248" height="420" rx="28" fill="#102346"/>
+  <text x="474" y="312" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="20">Step 02</text>
+  <text x="474" y="370" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Field Extraction</text>
+  <text x="474" y="434" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Capture agent name, brokerage, email, phone, location, and source links.</text>
+  <rect x="772" y="248" width="248" height="420" rx="28" fill="#102346"/>
+  <text x="804" y="312" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="20">Step 03</text>
+  <text x="804" y="370" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Validation</text>
+  <text x="804" y="434" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Normalize the fields, remove duplicates, and flag incomplete or low-trust records.</text>
+  <rect x="1102" y="248" width="330" height="420" rx="28" fill="#102346"/>
+  <text x="1134" y="312" fill="#8CD3FF" font-family="Arial, sans-serif" font-size="20">Step 04</text>
+  <text x="1134" y="370" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="30" font-weight="700">Delivery</text>
+  <text x="1134" y="434" fill="#D8E5F2" font-family="Arial, sans-serif" font-size="20">Export the cleaned lead list to CSV, Sheets, or a downstream outreach or CRM workflow.</text>
+  <path d="M360 458H442" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M690 458H772" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+  <path d="M1020 458H1102" stroke="#1EE7D4" stroke-width="10" stroke-linecap="round"/>
+</svg>
