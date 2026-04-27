@@ -59,6 +59,10 @@ This repo now demonstrates the exact workflow Scott described instead of just ta
 
 ![CRM handoff preview](docs/crm-handoff-preview.svg)
 
+### Terminal run proof
+
+![Terminal demo proof](docs/terminal-demo-proof.svg)
+
 These visuals mirror the real files included in this repo:
 
 - [`examples/raw_leads_sample.csv`](examples/raw_leads_sample.csv)
@@ -67,6 +71,7 @@ These visuals mirror the real files included in this repo:
 - [`examples/webhook_mapping.md`](examples/webhook_mapping.md)
 - [`artifacts/cleaned_leads.csv`](artifacts/cleaned_leads.csv)
 - [`artifacts/crm_payloads.json`](artifacts/crm_payloads.json)
+- [`docs/terminal-demo-proof.svg`](docs/terminal-demo-proof.svg)
 
 ## What is included
 
