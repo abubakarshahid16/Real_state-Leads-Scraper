@@ -42,7 +42,7 @@ This project turns that into a structured workflow: source lead data, normalize 
 
 ## Why this repo is strong
 
-This repo now demonstrates the exact workflow Scott described instead of just talking about it:
+This repo demonstrates a practical workflow for real-estate lead generation and CRM handoff:
 
 - real-estate agent records
 - name, email, phone, city, state, source, and URL fields
@@ -171,11 +171,11 @@ That makes this repo useful in two ways:
 - as a proof-of-understanding for a lead generation workflow
 - as a starting point for a production lead-intelligence pipeline
 
-## How to present it to a client
+## Implementation positioning
 
-The strongest honest positioning is:
+This repository demonstrates the workflow, data model, cleaning logic, deduplication, and CRM-ready export shape for a real-estate agent lead pipeline.
 
-> This repository demonstrates the workflow, data model, cleaning logic, deduplication, and CRM-ready export shape for a real-estate agent lead pipeline. The production version would connect to source APIs first, then push validated records into ReSimpli or GoHighLevel.
+In a production implementation, source connectors can be added for approved data providers or APIs. The cleaned and validated records can then be pushed into ReSimpli or GoHighLevel through API/webhook integration.
 
 ## Summary
 
